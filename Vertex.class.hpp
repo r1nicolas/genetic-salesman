@@ -6,7 +6,7 @@
 //   By: rnicolas <rnicolas@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 20:18:23 by rnicolas          #+#    #+#             //
-//   Updated: 2015/02/06 20:52:24 by rnicolas         ###   ########.fr       //
+//   Updated: 2015/02/06 20:57:37 by aguilbau         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -24,7 +24,7 @@ public:
 	Vertex(Vertex const &ori);
 	~Vertex();
 
-	Vertex	&operator=(Vertex &rhs);
+	Vertex	&operator=(Vertex const &rhs);
 
 	double	distance_to(Vertex const &v) const;
 };

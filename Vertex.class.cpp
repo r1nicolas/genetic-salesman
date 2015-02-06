@@ -6,7 +6,7 @@
 //   By: rnicolas <rnicolas@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 20:21:56 by rnicolas          #+#    #+#             //
-//   Updated: 2015/02/06 20:52:36 by rnicolas         ###   ########.fr       //
+//   Updated: 2015/02/06 20:57:51 by aguilbau         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -29,7 +29,7 @@ Vertex::~Vertex()
 {
 }
 
-Vertex	&Vertex::operator=(Vertex &rhs)
+Vertex	&Vertex::operator=(Vertex const &rhs)
 {
 	this->_x = rhs._x;
 	this->_y = rhs._y;
