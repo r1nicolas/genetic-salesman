@@ -6,7 +6,7 @@
 //   By: rnicolas <rnicolas@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 20:21:56 by rnicolas          #+#    #+#             //
-//   Updated: 2015/02/06 20:37:04 by rnicolas         ###   ########.fr       //
+//   Updated: 2015/02/06 20:52:36 by rnicolas         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -21,7 +21,7 @@ Vertex::Vertex(double x, double y): _x(x), _y(y)
 {
 }
 
-Vertex::Vertex(Vertex &ori): _x(ori._x), _y(ori._y)
+Vertex::Vertex(Vertex const &ori): _x(ori._x), _y(ori._y)
 {
 }
 
