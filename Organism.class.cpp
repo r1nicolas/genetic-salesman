@@ -1,35 +1,34 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Organism.class.hpp                                 :+:      :+:    :+:   //
+//   Organism.class.cpp                                 :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: aguilbau <aguilbau@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2015/02/06 21:07:14 by aguilbau          #+#    #+#             //
-//   Updated: 2015/02/09 18:07:45 by rnicolas         ###   ########.fr       //
+//   Created: 2015/02/06 21:07:23 by aguilbau          #+#    #+#             //
+//   Updated: 2015/02/09 18:05:39 by rnicolas         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef ORGANISM_CLASS_HPP
-#define ORGANISM_CLASS_HPP
+#include "Organism.class.hpp"
 
-# include "Vertex.class.hpp"
-# include <list>
+Organism::Organism() {
 
-class Organism {
+}
 
-	std::list<int>		_path;
+Organism::Organism(Organism const& src) {
+	*this = src;
+}
 
-public:
+Organism::~Organism() {
+	return;
+}
 
-	Organism(void);
-	Organism(Organism const& src);
-	~Organism(void);
+Organism		& Organism::operator=(Organism const& rhs) {
+	this->_path = rhs._path;
+	return *this;
+}
 
-	void			add_point(unsigned int i);
-
-	Organism& operator=(Organism const& rhs);
-
-};
-
-#endif //!ORGANISM_CLASS_HPP
+void			Organism::add_point(unsigned int i) {
+	this->_path.push_back(i);
+}

@@ -6,7 +6,7 @@
 //   By: aguilbau <aguilbau@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 21:07:14 by aguilbau          #+#    #+#             //
-//   Updated: 2015/02/09 18:07:45 by rnicolas         ###   ########.fr       //
+//   Updated: 2015/02/09 18:06:14 by rnicolas         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -32,4 +32,4 @@ public:
 
 };
 
-#endif //!ORGANISM_CLASS_HPP
+#endif //!ORGANSIM_CLASS_HPP
