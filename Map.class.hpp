@@ -31,7 +31,8 @@ public:
 	Map(Map &m);
 	~Map();
 
-	Map			&operator=(Map const &m);
+	Map				&operator=(Map const &m);
+	const Vertex	&operator[](int i) const;
 
 };
 

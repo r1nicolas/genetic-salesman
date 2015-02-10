@@ -13,7 +13,7 @@
 #ifndef ORGANISM_CLASS_HPP
 #define ORGANISM_CLASS_HPP
 
-# include "Vertex.class.hpp"
+# include "Map.class.hpp"
 # include <vector>
 
 class Organism {
@@ -29,6 +29,8 @@ public:
 	~Organism(void);
 
 	void			add_point(unsigned int i);
+
+	double			eval(Map const &map);
 
 	Organism& operator=(Organism const& rhs);
 

@@ -12,6 +12,7 @@
 
 #include <algorithm>
 #include "Organism.class.hpp"
+#include "Vertex.class.hpp"
 
 static void		shuffle(int *arr, size_t n)
 {
@@ -79,6 +80,19 @@ Organism		&Organism::operator=(Organism const& rhs) {
 
 	return *this;
 
+}
+
+double			Organism::eval(Map const &map)
+{
+	unsigned int	size, i;
+	double			result = 0;
+
+	size = this->_path.size();
+
+	for (i = 0; i < size - 1;i++)
+		result += map[i].distance_to(map[i + 1]);
+
+	return (result);
 }
 
 void			Organism::add_point(unsigned int i) {
