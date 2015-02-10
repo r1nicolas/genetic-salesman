@@ -34,8 +34,10 @@ Map::~Map() {
 
 void		Map::populate(void) {
 
-	for (unsigned int i = 0; i < this->_points.size(); ++i) {
-		this->_points.push_back(Vertex(rand(), rand()));
+	unsigned int size = this->_points.size();
+
+	for (unsigned int i = 0; i < size; ++i) {
+		this->_points.push_back(Vertex(rand() % 1000, rand() % 1000));
 	}
 
 }
