@@ -40,10 +40,15 @@ void		Map::populate(void) {
 
 }
 
-Map			&Map::operator=(Map const &m) {
+Map				&Map::operator=(Map const &m) {
 
 	this->_points = m._points;
 
 	return *this;
 
+}
+
+const Vertex	&Map::operator[](int i) const {
+
+	return this->_points[i];
 }
