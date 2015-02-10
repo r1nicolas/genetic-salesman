@@ -14,16 +14,18 @@
 #define ORGANISM_CLASS_HPP
 
 # include "Vertex.class.hpp"
-# include <list>
+# include <vector>
 
 class Organism {
 
-	std::list<int>		_path;
+	std::vector<int>		_path;
 
 public:
 
 	Organism(void);
+	Organism(unsigned int n);
 	Organism(Organism const& src);
+	Organism(Organism const& p1, Organism const& p2);
 	~Organism(void);
 
 	void			add_point(unsigned int i);
