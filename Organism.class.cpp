@@ -11,6 +11,8 @@
 // ************************************************************************** //
 
 #include <algorithm>
+#include <iostream>
+
 #include "Organism.class.hpp"
 #include "Vertex.class.hpp"
 
@@ -19,9 +21,9 @@ static void		shuffle(int *arr, size_t n)
 	unsigned int	i, j;
 	int				t;
 
-	for (i = 0; i < n - 1; i++) 
+	for (i = 0; i < n; i++) 
 	{
-		j = (i + rand()) % n;
+		j = rand() % n;
 		t = arr[j];
 		arr[j] = arr[i];
 		arr[i] = t;
@@ -43,7 +45,7 @@ Organism::Organism(unsigned int n) : _path(n) {
 	shuffle(tab, n);
 
 	for (i = 0; i < n; ++i)
-		this->add_point(tab[i]);
+		this->_path[i] = tab[i];
 }
 
 Organism::Organism(Organism const& src) {
@@ -54,19 +56,18 @@ Organism::Organism(Organism const& src) {
 
 Organism::Organism(Organism const& p1, Organism const& p2) : _path(p1._path.size())
 {
-	unsigned int	size, i;
+	unsigned int	size, i, j;
 
 	size = p1._path.size();
 
 	for (i = 0; i < size / 2; i++)
 		this->_path[i] = p1._path[i];
 
-	for (i = 0;i < size;i++)
+	for (; i < size; i++)
+	for (j = 0;j < size;j++)
 	{
-		if (!(std::find(this->_path.begin(), this->_path.end(), p2._path[i]) != this->_path.end()))
-			this->_path.push_back(p2._path[i]);
-
-		i++;
+		if (!(std::find(this->_path.begin(), this->_path.end(), p2._path[j]) != this->_path.end()))
+			this->_path[i] = p2._path[j];
 	}
 }
 
