@@ -11,7 +11,7 @@
 // ************************************************************************** //
 
 #ifndef ORGANISM_CLASS_HPP
-#define ORGANISM_CLASS_HPP
+# define ORGANISM_CLASS_HPP
 
 # include "Map.class.hpp"
 # include <vector>

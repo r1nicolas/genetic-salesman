@@ -87,7 +87,7 @@ int		main(void)
 
 		x_best(4, v_organism, v_organism_next, v_score);
 
-		for (unsigned int i = 64;i < 64;i++)
+		for (unsigned int i = 4;i < 64;i++)
 			v_organism_next[i] = Organism(v_organism[rand() % 64], v_organism[rand() % 64]);
 
 		v_organism = v_organism_next;
