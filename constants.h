@@ -6,7 +6,7 @@
 /*   By: aguilbau <aguilbau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/12 17:32:45 by aguilbau          #+#    #+#             */
-/*   Updated: 2015/02/12 17:35:31 by aguilbau         ###   ########.fr       */
+/*   Updated: 2015/02/12 17:47:51 by aguilbau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 # define ORGANISM_COUNT		100
 # define GENERATION_COUNT	1000
 # define XBEST				ORGANISM_COUNT / 25
+# define MUTATION_PROBABILITY	40
 
 #endif

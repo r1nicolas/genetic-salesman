@@ -6,7 +6,7 @@
 //   By: aguilbau <aguilbau@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 21:07:23 by aguilbau          #+#    #+#             //
-//   Updated: 2015/02/12 17:32:07 by aguilbau         ###   ########.fr       //
+//   Updated: 2015/02/12 17:46:58 by aguilbau         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,6 +15,7 @@
 
 #include "Organism.class.hpp"
 #include "Vertex.class.hpp"
+#include "constants.h"
 
 static void		shuffle(int *arr, size_t n)
 {
@@ -67,6 +68,8 @@ Organism::Organism(Organism const& p1, Organism const& p2) : _path(p1._path.size
 				this->_path[i] = p2._path[j];
 		}
 	}
+
+	this->mutate();
 }
 
 Organism::~Organism() {
@@ -74,7 +77,16 @@ Organism::~Organism() {
 }
 
 void			Organism::mutate(void) {
-	
+	int			r1, r2;
+
+	if ((unsigned int)rand() % 100 < this->_mutation_probability) {
+		r1 = rand() % MAP_SIZE;
+		r2 = rand() % MAP_SIZE;
+		this->_path[r1] ^= this->_path[r2];
+		this->_path[r2] ^= this->_path[r1];
+		this->_path[r1] ^= this->_path[r2];
+		this->mutate();
+	}
 }
 
 Organism		&Organism::operator=(Organism const& rhs) {
@@ -111,4 +123,4 @@ std::ostream		&operator<<(std::ostream &o, Organism const &e) {
 	return o;
 }
 
-unsigned int		Organism::mutation_probability = 10;
+unsigned int		Organism::_mutation_probability = MUTATION_PROBABILITY;

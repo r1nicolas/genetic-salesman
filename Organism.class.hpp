@@ -6,7 +6,7 @@
 //   By: aguilbau <aguilbau@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 21:07:14 by aguilbau          #+#    #+#             //
-//   Updated: 2015/02/12 17:31:22 by aguilbau         ###   ########.fr       //
+//   Updated: 2015/02/12 17:42:41 by aguilbau         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,7 +19,7 @@
 class Organism {
 
 	std::vector<int>		_path;
-	static unsigned int		mutation_probability;
+	static unsigned int		_mutation_probability;
 
 public:
 
