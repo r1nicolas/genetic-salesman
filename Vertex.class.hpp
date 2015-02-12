@@ -6,7 +6,7 @@
 //   By: rnicolas <rnicolas@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 20:18:23 by rnicolas          #+#    #+#             //
-//   Updated: 2015/02/06 20:57:37 by aguilbau         ###   ########.fr       //
+//   Updated: 2015/02/12 16:45:37 by aguilbau         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,9 +16,10 @@
 class Vertex
 {
 private:
+public:
 	double	_x;
 	double	_y;
-public:
+
 	Vertex();
 	Vertex(double x, double y);
 	Vertex(Vertex const &ori);

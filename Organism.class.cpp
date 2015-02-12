@@ -6,7 +6,7 @@
 //   By: aguilbau <aguilbau@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 21:07:23 by aguilbau          #+#    #+#             //
-//   Updated: 2015/02/09 18:05:39 by rnicolas         ###   ########.fr       //
+//   Updated: 2015/02/12 17:16:47 by aguilbau         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -66,7 +66,7 @@ Organism::Organism(Organism const& p1, Organism const& p2) : _path(p1._path.size
 	for (; i < size; i++)
 	for (j = 0;j < size;j++)
 	{
-		if (!(std::find(this->_path.begin(), this->_path.end(), p2._path[j]) != this->_path.end()))
+		if (!(std::find(this->_path.begin(), this->_path.begin() + i, p2._path[j]) != this->_path.begin() + i))
 			this->_path[i] = p2._path[j];
 	}
 }
@@ -91,7 +91,7 @@ double			Organism::eval(Map const &map)
 	size = this->_path.size();
 
 	for (i = 0; i < size - 1;i++)
-		result += map[i].distance_to(map[i + 1]);
+		result += map[this->_path[i]].distance_to(map[this->_path[i + 1]]);
 
 	return (result);
 }
@@ -100,4 +100,19 @@ void			Organism::add_point(unsigned int i) {
 
 	this->_path.push_back(i);
 
+}
+
+std::vector<int>	Organism::getPath(void) const
+{
+	return this->_path;
+}
+
+std::ostream		&operator<<(std::ostream &o, Organism const &e) {
+
+	std::vector<int>	v = e.getPath();
+
+	for (unsigned int i = 0; i < v.size(); ++i) {
+		o << v[i] << " ";
+	}
+	return o;
 }

@@ -6,7 +6,7 @@
 //   By: rnicolas <rnicolas@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 20:04:27 by rnicolas          #+#    #+#             //
-//   Updated: 2015/02/06 20:16:45 by rnicolas         ###   ########.fr       //
+//   Updated: 2015/02/12 17:17:07 by aguilbau         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -69,26 +69,26 @@ void	x_best(unsigned int x, std::vector<Organism> &v_organism,
 
 int		main(void)
 {
-	Map						map(30);
-	std::vector<Organism>	v_organism(64);
-	std::vector<Organism>	v_organism_next(64);
-	std::vector<double>		v_score(64);
-
 	srand(time(NULL));
-	for(int i = 0;i < 64;i++)
+
+	Map						map(30);
+	std::vector<Organism>	v_organism(10);
+	std::vector<Organism>	v_organism_next(10);
+	std::vector<double>		v_score(10);
+
+	for(int i = 0;i < 10;i++)
 		v_organism[i] = Organism(30);
 
-
 	for(int g = 0; g < 100; g++) {
-		for(int i = 0;i < 64;i++)
+		for(int i = 0;i < 10;i++)
 			v_score[i] = v_organism[i].eval(map);
 
 		std::cout << "gen: " << g;
 
 		x_best(4, v_organism, v_organism_next, v_score);
 
-		for (unsigned int i = 4;i < 64;i++)
-			v_organism_next[i] = Organism(v_organism[rand() % 64], v_organism[rand() % 64]);
+		for (unsigned int i = 4;i < 10;i++)
+			v_organism_next[i] = Organism(v_organism[rand() % 10], v_organism[rand() % 10]);
 
 		v_organism = v_organism_next;
 	}
