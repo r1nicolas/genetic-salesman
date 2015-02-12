@@ -6,7 +6,7 @@
 //   By: rnicolas <rnicolas@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 20:21:56 by rnicolas          #+#    #+#             //
-//   Updated: 2015/02/06 20:57:51 by aguilbau         ###   ########.fr       //
+//   Updated: 2015/02/12 17:26:54 by aguilbau         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -35,11 +35,9 @@ Vertex	&Vertex::operator=(Vertex const &rhs) {
 	this->_y = rhs._y;
 
 	return (*this);
-
 }
 
 double	Vertex::distance_to(Vertex const &v) const {
 
 	return (sqrt(pow(this->_x - v._x, 2) +  pow(this->_y - v._y, 2)));
-
 }

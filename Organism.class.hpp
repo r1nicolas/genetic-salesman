@@ -6,7 +6,7 @@
 //   By: aguilbau <aguilbau@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/02/06 21:07:14 by aguilbau          #+#    #+#             //
-//   Updated: 2015/02/12 17:03:13 by aguilbau         ###   ########.fr       //
+//   Updated: 2015/02/12 17:31:22 by aguilbau         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,6 +19,7 @@
 class Organism {
 
 	std::vector<int>		_path;
+	static unsigned int		mutation_probability;
 
 public:
 
@@ -29,10 +30,8 @@ public:
 	~Organism(void);
 
 	std::vector<int>	getPath(void) const;
-
-	void			add_point(unsigned int i);
-
-	double			eval(Map const &map);
+	void				mutate(void);
+	double				eval(Map const &map);
 
 	Organism& operator=(Organism const& rhs);
 
